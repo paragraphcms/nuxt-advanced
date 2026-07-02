@@ -1,75 +1,39 @@
-# Nuxt Minimal Starter
+# ParagraphCMS Nuxt Advanced
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Ten README jest krótką dokumentacją projektu ParagraphCMS dla przykładu Nuxt Advanced. Projekt rozwija blog o lokalizacje przez `@nuxtjs/i18n`, prerenderowane trasy, RSS, `sitemap.xml`, `robots.txt`, `llms.txt` oraz generowanie dokumentów przez `@paragraphcms/seo`.
 
-## Setup
+Oficjalny kontekst: [ParagraphCMS Nuxt Advanced](https://paragraphcms.com/docs/advanced/nuxt).
 
-Make sure to install dependencies:
+## Konfiguracja
+
+1. Skopiuj `.env.example` do `.env`.
+2. Ustaw `NUXT_PARAGRAPH_API_KEY` kluczem API z ParagraphCMS.
+3. W ParagraphCMS utwórz kolekcję `blog`, jeśli korzystasz z domyślnej konfiguracji tras.
+4. Zmień `site.url` w `paragraph.config.ts` na docelową domenę.
+
+## Uruchomienie
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+Build/generowanie i podgląd:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm preview
 ```
 
-Locally preview production build:
+Do statycznego generowania użyj:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+pnpm generate
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Najważniejsze pliki
+
+- `paragraph.config.ts` - klient ParagraphCMS, konfiguracja strony i SEO.
+- `nuxt.config.ts` - i18n, prerendering i runtime config.
+- `server/api/` - endpointy bloga dla domyślnego i lokalizowanych języków.
+- `server/routes/` - RSS oraz generowane `sitemap.xml`, `robots.txt`, `llms.txt`.
